@@ -116,7 +116,7 @@ with st.expander("💰 Financial Information", expanded=True):
         )
 
         cibil_score = st.number_input(
-            "CIBIL Score",
+            "CIBIL Score (300 - 900)",
             min_value=300,
             max_value=900,
             value=750
