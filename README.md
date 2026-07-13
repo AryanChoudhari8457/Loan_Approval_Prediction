@@ -1,5 +1,11 @@
 # Loan Approval Prediction using Machine Learning
 
+## 🌐 Live Demo
+
+🔗 **Streamlit App:** https://loanapprovalprediction-9zd2zaqyttpnu2whxf9sma.streamlit.app/
+
+---
+
 ## Project Overview
 
 This project predicts whether a loan application will be **Approved** or **Rejected** using Machine Learning.
