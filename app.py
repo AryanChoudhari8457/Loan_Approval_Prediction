@@ -32,7 +32,7 @@ st.sidebar.subheader("📌 Model")
 st.sidebar.success("Random Forest Classifier")
 
 st.sidebar.subheader("👨‍💻 Developer")
-st.sidebar.write("Aryan Chaudhari")
+st.sidebar.write("Aryan Choudhari")
 
 st.sidebar.markdown("---")
 st.sidebar.write("### Instructions")
@@ -294,5 +294,5 @@ of getting the loan approved.
 st.markdown("---")
 
 st.caption(
-    "🏦 Loan Approval Prediction | Built with Streamlit & Scikit-learn | Developed by Aryan Chaudhari"
+    "🏦 Loan Approval Prediction | Built with Streamlit & Scikit-learn | Developed by Aryan Choudhari"
 )
