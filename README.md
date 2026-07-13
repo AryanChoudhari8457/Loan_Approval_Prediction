@@ -1,47 +1,40 @@
 # Loan Approval Prediction using Machine Learning
 
+## Overview
+
+This project predicts whether a loan application will be **Approved** or **Rejected** using a Machine Learning model trained on applicant and financial information.
+
+The model is built using the **Random Forest Classifier** and deployed as an interactive **Streamlit Web Application** for real-time predictions.
+
+---
+
 ## 🌐 Live Demo
 
-🔗 **Streamlit App:** https://loanapprovalprediction-9zd2zaqyttpnu2whxf9sma.streamlit.app/
+**Streamlit Application:**
+[Paste your Streamlit Cloud URL here
+](https://loanapprovalprediction-9zd2zaqyttpnu2whxf9sma.streamlit.app/)
+---
+
+## Project Structure
+
+```text
+Loan_Approval_Prediction/
+│
+├── .devcontainer/
+├── images/
+├── README.md
+├── app.py
+├── loan_approval_dataset.csv
+├── loan_approval_ml_model.ipynb
+├── loan_approval_ml_model.pkl
+└── requirements.txt
+```
 
 ---
 
-## Project Overview
+## Dataset Features
 
-This project predicts whether a loan application will be **Approved** or **Rejected** using Machine Learning.
-
-The model was built using a **Random Forest Classifier** and improved through **Hyperparameter Tuning (RandomizedSearchCV)**. The final trained model is saved using **Joblib**, allowing predictions without retraining.
-
----
-
-## Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* Joblib
-
----
-
-## Machine Learning Workflow
-
-* Data Loading
-* Data Preprocessing
-* Label Encoding
-* Train-Test Split
-* Random Forest Classifier
-* Hyperparameter Tuning (RandomizedSearchCV)
-* Model Evaluation
-* Feature Importance Analysis
-* Save & Load Trained Model
-* Loan Approval Prediction
-
----
-
-## Features Used
+The model uses the following input features:
 
 * Number of Dependents
 * Education
@@ -57,50 +50,118 @@ The model was built using a **Random Forest Classifier** and improved through **
 
 ---
 
-## Target Variable
+## Machine Learning Workflow
 
-**loan_status**
-
-* **1** → Loan Approved
-* **0** → Loan Rejected
+1. Data Collection
+2. Data Preprocessing
+3. Exploratory Data Analysis (EDA)
+4. Feature Encoding
+5. Train-Test Split
+6. Model Training using Random Forest Classifier
+7. Hyperparameter Tuning using RandomizedSearchCV
+8. Model Evaluation
+9. Feature Importance Analysis
+10. Model Serialization using Joblib
+11. Streamlit Web Application Deployment
 
 ---
 
-## Machine Learning Algorithm
+## Technologies Used
 
-**Random Forest Classifier**
-
-### Hyperparameter Tuning
-
-* RandomizedSearchCV
-* 5-Fold Cross Validation
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Joblib
+* Matplotlib
+* Seaborn
+* Streamlit
 
 ---
 
 ## Model Performance
 
-* Test Accuracy: **97.19%**
-* Cross Validation Score: **97.98%**
+| Metric                 |      Score |
+| ---------------------- | ---------: |
+| Test Accuracy          | **97.19%** |
+| Cross Validation Score | **97.98%** |
 
-Evaluation Metrics Used:
+### Evaluation Metrics Used
 
 * Accuracy
 * Precision
 * Recall
 * F1-Score
 * Confusion Matrix
+* Feature Importance
 
 ---
 
 ## Feature Importance
 
-The Random Forest model identified the following features as the most influential:
+The Random Forest model identified the following features as the most influential in predicting loan approval:
 
-1. CIBIL Score
-2. Loan Term
-3. Loan Amount
+| Rank | Feature     |
+| ---: | ----------- |
+|    1 | CIBIL Score |
+|    2 | Loan Term   |
+|    3 | Loan Amount |
 
-CIBIL Score was the most important feature for predicting loan approval.
+**Observation:**
+CIBIL Score is the most influential feature used by the model for predicting loan approval.
+
+---
+
+## Streamlit Application
+
+The Streamlit application allows users to:
+
+* Enter applicant details through an interactive interface
+* Predict whether a loan will be approved or rejected
+* Display prediction probabilities
+* Provide real-time predictions using the trained Machine Learning model
+
+---
+
+## Running the Project Locally
+
+### Clone the repository
+
+```bash
+git clone https://github.com/AryanChaudhari8457/Loan_Approval_Prediction.git
+```
+
+### Navigate to the project folder
+
+```bash
+cd Loan_Approval_Prediction
+```
+
+### Install the required libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Project Screenshots
+
+### Home Page
+
+<img width="1900" height="862" alt="Screenshot 2026-07-13 181022" src="https://github.com/user-attachments/assets/dcb50d11-83a9-401d-b1b3-c3cc79a6f667" />
+
+
+### Prediction Result
+
+<img width="1912" height="840" alt="Screenshot 2026-07-13 181115" src="https://github.com/user-attachments/assets/0d55e5aa-947b-4ff9-be25-5e62352cc24e" />
+
 
 ---
 
@@ -115,70 +176,19 @@ This project includes:
 
 ---
 
-## Project Structure
-
-```text
-Loan-Approval-Prediction/
-│
-├── Loan_Approval_Prediction.ipynb
-├── loan_approval_dataset.csv
-├── loan_approval_ml_model.pkl
-├── requirements.txt
-├── README.md
-│
-└── images/
-    ├── feature_importance.png
-    ├── confusion_matrix.png
-    ├── correlation_heatmap.png
-    └── target_distribution.png
-```
-
----
-
-## How to Run
-
-### 1. Install Required Libraries
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Open the Jupyter Notebook
-
-Run all cells to:
-
-* Load the dataset
-* Train the model
-* Evaluate the model
-* Generate visualizations
-
-### 3. Use the Saved Model
-
-Load the trained model using Joblib:
-
-```python
-import joblib
-
-model = joblib.load("loan_approval_ml_model.pkl")
-```
-
-Then provide new applicant details to predict whether the loan will be **Approved** or **Rejected**.
-
----
-
 ## Future Improvements
 
-* Build a Streamlit web application
-* Experiment with XGBoost and LightGBM
-* Improve feature engineering
-* Deploy the model online
+* Compare multiple Machine Learning algorithms
+* Add Explainable AI (SHAP/LIME)
+* Deploy using Docker
+* Connect with a database
+* Add user authentication
+* Support batch predictions
 
 ---
 
 ## Author
 
-**Aryan Choudhari**
+**Aryan Chaudhari**
 
-Engineering Student (Artificial Intelligence & Data Science)
-
-Interested in Machine Learning, Data Analytics, and Python Development.
+---
