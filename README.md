@@ -20,7 +20,6 @@ The model is built using the **Random Forest Classifier** and deployed as an int
 ```text
 Loan_Approval_Prediction/
 │
-├── .devcontainer/
 ├── images/
 ├── README.md
 ├── app.py
